@@ -1,5 +1,5 @@
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Calendar, Clock, Mail, Phone, School } from "lucide-react";
 import Link from "next/link";
 
@@ -29,9 +29,9 @@ export default function Home() {
               Kontakt
             </Link>
           </nav>
-          {/*<Button variant="outline" className="md:hidden">*/}
-          {/*  Menu*/}
-          {/*</Button>*/}
+          <Button variant="outline" className="md:hidden">
+            Menu
+          </Button>
         </div>
       </header>
 
@@ -44,9 +44,9 @@ export default function Home() {
             <p className="text-xl md:text-2xl mb-8">
               Miejsce, gdzie rozwijamy pasje i kształtujemy przyszłość
             </p>
-            {/*<Button className="bg-white text-blue-600 hover:bg-blue-100">*/}
-            {/*  Dowiedz się więcej*/}
-            {/*</Button>*/}
+            <Button className="bg-white text-blue-600 hover:bg-blue-100">
+              Dowiedz się więcej
+            </Button>
           </div>
 
           <div className="w-full h-full absolute top-0 left-0 bg-black/40 z-10"></div>
@@ -128,12 +128,12 @@ export default function Home() {
               Zapisz się do newslettera
             </h2>
             <form className="max-w-md mx-auto flex gap-4">
-              {/*<Input*/}
-              {/*  type="email"*/}
-              {/*  placeholder="Twój adres e-mail"*/}
-              {/*  className="flex-grow"*/}
-              {/*/>*/}
-              {/*<Button type="submit">Zapisz się</Button>*/}
+              <Input
+                type="email"
+                placeholder="Twój adres e-mail"
+                className="flex-grow"
+              />
+              <Button type="submit">Zapisz się</Button>
             </form>
           </div>
         </section>
