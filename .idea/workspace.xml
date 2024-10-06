@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a79b10b0-8035-4890-8d85-219b5450e086" name="Changes" comment="chore(api): add nestjs app">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/prisma/migrations/20241006113054_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/shared/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+    <list default="true" id="a79b10b0-8035-4890-8d85-219b5450e086" name="Changes" comment="feat(api): add query for fetching list of articles">
+      <change afterPath="$PROJECT_DIR$/apps/api/schema.gql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/articles.handler.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/articles.mapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/articles.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/articles.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/domain/article.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/domain/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/modules/articles/dto/articles-response.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.controller.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.controller.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +27,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="false" />
     <option name="myAllFileTypesSelected" value="true" />
@@ -44,25 +56,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/debian/Projects/bright-future&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/debian/Projects/bright-future/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/debian/Projects/bright-future/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/debian/Projects/bright-future",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/home/debian/Projects/bright-future/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "/home/debian/Projects/bright-future/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api/src/modules/articles/dto" />
+      <recent name="$PROJECT_DIR$/apps/api/src/modules" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -105,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728213307824</updated>
       <workItem from="1728213310720" duration="291000" />
-      <workItem from="1728213655896" duration="968000" />
+      <workItem from="1728213655896" duration="12518000" />
     </task>
     <task id="LOCAL-00004" summary="chore(api): add nestjs app">
       <option name="closed" value="true" />
@@ -115,7 +132,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728213418686</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: setup docker compose with postgres">
+      <option name="closed" value="true" />
+      <created>1728214656304</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728214656304</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat(api): add prisma">
+      <option name="closed" value="true" />
+      <created>1728214688224</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728214688224</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +163,9 @@
     <MESSAGE value="feat(web): add background image to the hero" />
     <MESSAGE value="chore(web): add shadcn (button, input)" />
     <MESSAGE value="chore(api): add nestjs app" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(api): add nestjs app" />
+    <MESSAGE value="feat: setup docker compose with postgres" />
+    <MESSAGE value="feat(api): add prisma" />
+    <MESSAGE value="feat(api): add query for fetching list of articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(api): add query for fetching list of articles" />
   </component>
 </project>
