@@ -1,12 +1,12 @@
 // import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
-import {Calendar, Clock, Mail, Phone, School} from "lucide-react";
+import { Calendar, Clock, Mail, Phone, School } from "lucide-react";
 import Link from "next/link";
 
-export default function StronaGlowna() {
+export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-blue-600 text-white">
+      <header className="bg-gray-800 text-white">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <School className="h-8 w-8" />
@@ -36,8 +36,8 @@ export default function StronaGlowna() {
       </header>
 
       <main className="flex-grow">
-        <section className="bg-blue-500 text-white py-20">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative bg-blue-500 text-white py-48 bg-cover bg-no-repeat bg-[url('/images/background.jpg')]">
+          <div className="relative z-20 container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Witaj w naszej szkole
             </h1>
@@ -48,6 +48,8 @@ export default function StronaGlowna() {
             {/*  Dowiedz się więcej*/}
             {/*</Button>*/}
           </div>
+
+          <div className="w-full h-full absolute top-0 left-0 bg-black/40 z-10"></div>
         </section>
 
         <section className="text-black py-16">
